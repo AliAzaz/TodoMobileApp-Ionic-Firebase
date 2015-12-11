@@ -1,0 +1,32 @@
+
+<div ng-controller="add_tasks as add">
+    <ion-header-bar class="bar-dark">
+
+        <h1 class="title">Add Task</h1>
+
+    </ion-header-bar>
+
+    <form name="todo">
+    <ion-content>
+
+
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Task</span>
+            <textarea ROWS=5 placeholder="Task" ng-model="add.txt_task" required></textarea>
+        </label>
+
+        <ion-toggle ng-model="add.mode" toggle-class="toggle-balanced" ng-change="add.change_mode()" ng-show="add.log_fb()"
+                    ng-init="add.mode=false;add.mode_task='Public'">Make this Task {{add.mode_task}}</ion-toggle>
+
+    </ion-content>
+
+    <ion-footer-bar class="bar-assertive">
+        <button class="button button-full button-clear button-dark" ng-disabled="todo.$invalid" ng-click="add.save_task()">
+            <p style="margin-top: -2px"><i class="icon icon-left ion-plus"></i> Add</p>
+        </button>
+    </ion-footer-bar>
+
+    </form>
+
+</div>
+
